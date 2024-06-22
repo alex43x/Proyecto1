@@ -1,0 +1,122 @@
+/*Fuente Nombre*/
+@import url('https://fonts.googleapis.com/css2?family=PT+Serif&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat', sans-serif;
+    list-style: none;
+  }
+body{
+    /* Color de fondo: */
+    background-color:bisque;
+    font-family: sans-serif;
+}
+.headerr{
+    width: 100%;
+    height: 100px;
+    /* Color de la barra superior */
+    background-color: cornsilk;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 70px 100px;
+}
+.logo{
+display: flex;
+align-items: center;
+}
+.logo h2{
+    /* Fuente y Tamaño del nombre del colegio */
+    font-family: 'PT Serif', serif;
+    font-size: 25px;
+}
+.logo img{
+    /* Tmaño de la imagen del logo */
+    width: 100px;
+    height: 90px;
+}
+.bars{
+    display: none;
+
+}
+.navbar ul{
+    display: flex;
+
+}
+.navbar ul li a {
+    display: block;
+    /* Color de las letras de la barra de navegacion */
+    color:brown;
+    /* Tamaño de las letras de la barra de navegacion */
+    font-size: 18px;
+    padding: 10px 25px;
+    border-radius: 15px;
+    transition: 0.2s;
+    margin: 0 5px;
+    text-decoration: none;
+    
+}
+.navbar ul li a:hover{
+    /* Color de la letra y el fondo al pasar el cursos 
+    sobre alguna seccion de la barra de navegacion */
+    color:salmon;
+    background-color:bisque;
+}
+.navbar ul li a.active{
+    color:salmon;
+    background-color:bisque;
+}
+
+/* Seccion responsive de la barra superior */
+@media(max-width:1200px){
+    .headerr{
+        padding: 50px 30px;       
+    }
+    .bars{
+        display: block;
+        cursor: pointer;   
+    }
+    .bars .line{
+        width: 30px;
+        height: 3px;
+        background-color: brown;
+        margin: 6px 0px;
+    }
+    .navbar{
+        height: 0px;
+        position: absolute;
+        top:100px;
+        left:0; 
+        right: 0;
+        width: 100vw;
+        /* Color del fondo de la barra desplegada 
+        en modo responsive */
+        background-color:blanchedalmond;
+        transition: 0.5s;
+        overflow: hidden;
+    }
+    .navbar.active{
+        height: 450px;
+    }
+    .navbar ul{
+        display: block;
+        width: fit-content;
+        margin: 80px auto 0 auto;
+        text-align: center;
+        transition: 0.5s;
+        opacity: 0;
+    }
+    .navbar.active ul{
+        opacity: 1;
+    }
+    .navbar ul li a{
+         margin-bottom: 20px ;
+    }
+    .logo h2{
+        /* Fuente y tamaño del nombre en modo responsive */
+        font-family: 'PT Serif', serif;
+        font-size: 23px;
+    }
+}
